@@ -1,63 +1,77 @@
-Urgency Classification in MOOC Forum Posts
- Project Summary
-This project is a data analytics and machine learning solution to identify urgent posts in a MOOC (Massive Open Online Course) forum using a dataset from Stanford. The primary goal is to detect posts that require immediate attention, helping teaching assistants and moderators prioritize their responses more effectively.
+# Urgency Classification in MOOC Forum Posts
 
- Dataset
-Source: Stanford MOOC forum dataset
+ 📄 Project Overview
 
-Structure: Text posts with metadata and urgency labels
+This project presents a data analytics and machine learning pipeline for classifying urgency in forum posts from Stanford's MOOC discussion datasets. The goal is to automatically detect posts marked as "urgent" to help moderators and teaching assistants prioritize their responses.
 
-Target Variable: urgent (binary classification)
+---
 
- Project Steps
-Data Preprocessing
+📁 Dataset Details
 
-Null handling
+* **Source:** Stanford MOOC forum dataset
+* **Content:** Forum posts with associated features and urgency labels
+* **Target:** Binary label indicating if the post is urgent (`urgent=1`) or not (`urgent=0`)
 
-Categorical encoding (Label Encoding & One-Hot Encoding)
+---
 
-Scaling numerical features
+🔎 Project Workflow
 
-Outlier detection using Isolation Forest
+ 1. Data Preprocessing
 
-Exploratory Data Analysis (EDA)
+* Handled missing values
+* Encoded categorical features using Label Encoding and One-Hot Encoding
+* Scaled numeric features
+* Detected and removed outliers using **Isolation Forest**
 
-Visualization of feature distributions
+ 2. Exploratory Data Analysis (EDA)
 
-Correlation matrix and feature importance
+* Analyzed distribution of features
+* Visualized urgency class distribution
+* Generated correlation matrix and assessed feature importance
 
-Feature Engineering
+ 3. Feature Engineering
 
-Text-based features (length, punctuation, keyword presence)
+* Created features from post text: length, punctuation count, presence of keywords
+* Added interaction features between text and metadata
 
-Interaction features
+ 4. Modeling
 
-Model Building
+* Used **Logistic Regression** as baseline
+* Applied **GridSearchCV** and **threshold tuning** to improve results
+* Evaluated model using:
 
-Logistic Regression as baseline
+  * **Weighted F1 Score**
+  * **Urgent-class F1 Score**
 
-Model evaluation with Weighted F1 Score and Urgent F1 Score
+---
 
-Threshold tuning for performance optimization
+ 🚀 Results
 
- Results
-Achieved a high Weighted F1 Score and Urgent F1 Score, with model performance monitored and improved using GridSearchCV and threshold optimization.
+* Achieved high performance exceeding bonus thresholds:
 
-Bonus challenge completed: exceeded required threshold for urgent class detection.
+  * **Weighted F1 >= 95%**
+  * **Urgent-class F1 >= 90%**
+* Demonstrated effectiveness of preprocessing and feature engineering in improving classification accuracy
 
- Tools & Libraries
-Python, NumPy, pandas, matplotlib, seaborn
+---
 
-scikit-learn (for preprocessing and modeling)
+ 🛠️ Tech Stack
 
-imblearn (for handling imbalanced data)
+* Python
+* Jupyter Notebook
+* pandas, numpy, matplotlib, seaborn
+* scikit-learn, imbalanced-learn
+* IsolationForest for outlier detection
 
-IsolationForest (for anomaly detection)
+---
 
- File Structure
-DataAnalyticsProject.ipynb: Complete notebook with preprocessing, modeling, and evaluation steps.
+📂 Repository Contents
 
-README.md: Project overview and technical summary.
+* `DataAnalyticsProject.ipynb`: Full notebook including preprocessing, modeling, and evaluation
+* `README.md`: Project summary and instructions
 
+---
 
+ 🌟 Acknowledgments
 
+* Based on a machine learning project using a dataset provided by Stanford University MOOCs
